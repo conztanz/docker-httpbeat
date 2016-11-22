@@ -44,6 +44,8 @@ services:
             HTTPBEAT_PWD: changeme
             ELASTICSEARCH_HOST: localhost
             ELASTICSEARCH_PORT: 9200
+        volumes:
+            - /etc/httpbeat:/etc/httpbeat
         network_mode: bridge
         restart: always
 
