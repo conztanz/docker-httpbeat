@@ -81,7 +81,6 @@ output:
     # If insecure is set to true, all server host names and certificates will be accepted. 
     # /!\ man-in-the-middle attacks /!\ Use only for testing.
     #insecure: true
-    #insecure: true
 
     #cipher_suites: []
     #curve_types: []
