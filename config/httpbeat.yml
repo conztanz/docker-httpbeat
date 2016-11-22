@@ -22,7 +22,7 @@ httpbeat:
         #username:
         #password:
 
-       # Default is every 1 minute.
+      # Default is every 1 minute.
       #cron:
 
       #proxy_url: http://proxy:3128
@@ -34,9 +34,8 @@ httpbeat:
         #certificate_key: "/etc/pki/client/cert.key"
 
         # Controls whether the client verifies server certificates and host name.
-        # If insecure is set to true, all server host names and certificates will be
-        # accepted. In this mode TLS based connections are susceptible to
-        # man-in-the-middle attacks. Use only for testing.
+        # If insecure is set to true, all server host names and certificates will be accepted. 
+        # /!\ man-in-the-middle attacks /!\ Use only for testing.
         #insecure: true
 
         #cipher_suites: []
@@ -79,9 +78,9 @@ output:
     #certificate_key: "/etc/pki/client/cert.key"
 
     # Controls whether the client verifies server certificates and host name.
-    # If insecure is set to true, all server host names and certificates will be
-    # accepted. In this mode TLS based connections are susceptible to
-    # man-in-the-middle attacks. Use only for testing.
+    # If insecure is set to true, all server host names and certificates will be accepted. 
+    # /!\ man-in-the-middle attacks /!\ Use only for testing.
+    #insecure: true
     #insecure: true
 
     #cipher_suites: []
