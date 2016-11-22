@@ -2,21 +2,23 @@
 
 # miscellaneous
 apt-get update -y
-apt-get install wget git binutils -y
+apt-get install wget git binutils make -y
+
+# Golang
+curl https://glide.sh/get | sh
 wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz -P /usr/local
-tar -C /usr/local -xzf /usr/local/go1.7.1.linux-amd64.tar.gz
+tar -C /usr/local -xzf /usr/local/go1.7.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/work
 
 # httpbeat
-mkdir -p $GOPATH/github.com/christiangalsterer
-cd $GOPATH/github.com/christiangalsterer
+mkdir -p $GOPATH/src/github.com/christiangalsterer
+cd $GOPATH/src/github.com/christiangalsterer
 git clone https://github.com/christiangalsterer/httpbeat
-cd /httpbeat
+cd httpbeat
 git checkout tags/1.2.0
 make
 mv httpbeat /usr/bin/httpbeat
-export PATH=$PATH:/usr/bin
 
 # purge
 strip /usr/bin/httpbeat

@@ -7,7 +7,8 @@ COPY ./src/ /run/
 RUN chmod +x -R /run
 
 # bin
-RUN sh /run/setup/httpbeat.sh
+RUN sh /run/setup/httpbeat.sh \
+&&  export PATH=$PATH:/usr/bin
 
 # config
 RUN mkdir -p /.backup/httpbeat/
@@ -19,4 +20,4 @@ ENV HTTPBEAT_USER="" \
     ELASTICSEARCH_PORT="9200"
 
 ENTRYPOINT ["/run/entrypoint.sh"]
-CMD["httpbeat", "-c /etc/httpbeat/httpbeat.yml"]
+CMD ["httpbeat", "-c /etc/httpbeat/httpbeat.yml"]

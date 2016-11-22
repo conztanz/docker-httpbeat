@@ -55,35 +55,36 @@ httpbeat:
 output:
 
   ### Elasticsearch as output
-  elasticsearch.hosts: ["localhost:9200"]
+  elasticsearch:
+    hosts: [ "localhost:9200" ]
 
-  #elasticsearch.username: "admin"
-  #elasticsearch.password: "s3cr3t"
-  #elasticsearch.protocol: "https"  
+    #username: "admin"
+    #password: "s3cr3t"
+    #protocol: "https"  
 
-  #elasticsearch.worker: 1
-  #elasticsearch.index: "filebeat"
-  #elasticsearch.path: "/elasticsearch"
-  #elasticsearch.proxy_url: http://proxy:3128
+    #worker: 1
+    #index: "filebeat"
+    #path: "/elasticsearch"
+    #proxy_url: http://proxy:3128
 
 
-  #elasticsearch.max_retries: 3
-  #elasticsearch.bulk_max_size: 50
-  #elasticsearch.timeout: 90
-  #elasticsearch.flush_interval: 1
+    #max_retries: 3
+    #bulk_max_size: 50
+    #timeout: 90
+    #flush_interval: 1
 
-  #elasticsearch.tls:
-    #certificate_authorities: ["/etc/pki/root/ca.pem"]
-    #certificate: "/etc/pki/client/cert.pem"
-    #certificate_key: "/etc/pki/client/cert.key"
+    #tls:
+      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      #certificate: "/etc/pki/client/cert.pem"
+      #certificate_key: "/etc/pki/client/cert.key"
 
-    # Controls whether the client verifies server certificates and host name.
-    # If insecure is set to true, all server host names and certificates will be accepted. 
-    # /!\ man-in-the-middle attacks /!\ Use only for testing.
-    #insecure: true
+      # Controls whether the client verifies server certificates and host name.
+      # If insecure is set to true, all server host names and certificates will be accepted. 
+      # /!\ man-in-the-middle attacks /!\ Use only for testing.
+      #insecure: true
 
-    #cipher_suites: []
-    #curve_types: []
+      #cipher_suites: []
+      #curve_types: []
 
 ############################# Logging #########################################
 
@@ -92,7 +93,7 @@ output:
 # under all other system per default to syslog.
 #logging:
 
-  #to_syslog: true
+  to_syslog: false
   #to_files: false
   #files:
     #path: /var/log/mybeat
