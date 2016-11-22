@@ -20,7 +20,7 @@ Example use cases are:
 ## docker engine
 
 ```
-docker run -d -p 5601:5601 khezen/kibana:latest   
+docker run -d -p 5601:5601 khezen/httpbeat:latest   
 ```
 
 ## docker-compose
