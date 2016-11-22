@@ -24,18 +24,28 @@ docker run -d -p 5601:5601 khezen/httpbeat:latest
 ```
 
 ## docker-compose
+
+### [File Descriptors and MMap](https://www.elastic.co/guide/en/elasticsearch/guide/current/_file_descriptors_and_mmap.html)
+
+run the following command on your host:
+```
+sysctl -w vm.max_map_count=262144
+```
+You can set it permanently by modifying `vm.max_map_count` setting in your `/etc/sysctl.conf`.
+
+### docker-compose.yml
 ```
 version: '2'
 services:    
     httpbeat:
-        links:
-            - elasticsearch
         image: khezen/httpbeat
         environment:
             HTTPBEAT_USER: httpbeat
             HTTPBEAT_PWD: changeme
             ELASTICSEARCH_HOST: localhost
             ELASTICSEARCH_PORT: 9200
+        network_mode: bridge
+        restart: always
 
 ```
 or
@@ -49,6 +59,9 @@ services:
             ELASTIC_PWD: changeme
             KIBANA_PWD: brucewayne
             BEATS_PWD: jdilla
+        volumes:
+            - /data/elasticsearch:/usr/share/elasticsearch/data
+            - /etc/elasticsearch:/usr/share/elasticsearch/config 
         ports:
              - "9200:9200"
              - "9300:9300"
@@ -63,6 +76,8 @@ services:
             KIBANA_PWD: brucewayne
             ELASTICSEARCH_HOST: elasticsearch
             ELASTICSEARCH_PORT: 9200
+        volumes:
+            - /etc/kibana:/etc/kibana
         ports:
              - "5601:5601"
         network_mode: bridge
@@ -77,6 +92,10 @@ services:
             HTTPBEAT_PWD: jdilla
             ELASTICSEARCH_HOST: elasticsearch
             ELASTICSEARCH_PORT: 9200
+        volumes:
+            - /etc/httpbeat:/etc/httpbeat
+        network_mode: bridge
+        restart: always
 
 ```
 # Environment Variables
@@ -96,3 +115,7 @@ Elasticsearch port.
 # User Feedback
 ## Issues
 If you have any problems with or questions about this image, please ask for help through a [GitHub issue](https://github.com/Khezen/docker-httpbeat/issues).
+
+# Credit
+
+[christiangalsterer/httpbeat](https://github.com/christiangalsterer/httpbeat)

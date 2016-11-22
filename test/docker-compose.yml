@@ -1,5 +1,5 @@
 version: '2'
 services:
     httpbeat:
-        build: .
+        build: ..
         network_mode: bridge

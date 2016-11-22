@@ -1,10 +1,9 @@
 ############################# Input ############################################
-httpbeat:
+#httpbeat:
 
-  urls:
-    # Each - URL endpoints to poll. Below are the URL endpoint specific configurations
-    -
-      url: http://httpbin.org/headers
+  #urls:
+    #-
+      #url: http://httpbin.org/headers
 
       # HTTP method to use.
       # Possible options are:
@@ -14,7 +13,7 @@ httpbeat:
       # * patch
       # * post
       # * put
-      method: get
+      #method: get
 
       #body:
 
@@ -91,7 +90,7 @@ output:
 # There are three options for the log ouput: syslog, file, stderr.
 # Under Windos systems, the log files are per default sent to the file output,
 # under all other system per default to syslog.
-#logging:
+logging:
 
   to_syslog: false
   #to_files: false
