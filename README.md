@@ -2,8 +2,8 @@
 
 # Supported tags and respective `Dockerfile` links
 
-* `1.2.0`, `1.2`, `1`, [(1.2/Dockerfile)](https://github.com/Khezen/docker-httpbeat/blob/4d0d83a639f078ccf39a725cef04724bb2571266/Dockerfile)
-* `2.0.0`, `2.0`, `2`, `latest` [(2.0/Dockerfile)](https://github.com/Khezen/docker-httpbeat/blob/master/Dockerfile)
+* `1.2.0`, `1.2`, `1`, [(1.2/Dockerfile)](https://github.com/Khezen/docker-httpbeat/blob/1.2/Dockerfile)
+* `2.0.0`, `2.0`, `2`, `latest` [(2.0/Dockerfile)](https://github.com/Khezen/docker-httpbeat/blob/2.0/Dockerfile)
 
 # What is Httpbeat?
 Httpbeat is a [Beat](https://www.elastic.co/products/beats) used to call HTTP endpoints.
