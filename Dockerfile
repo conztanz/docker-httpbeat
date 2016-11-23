@@ -11,7 +11,6 @@ RUN sh /run/setup/httpbeat.sh \
 &&  export PATH=$PATH:/usr/bin
 
 # config
-RUN mkdir -p /.backup/httpbeat/
 COPY config/httpbeat.yml /.backup/httpbeat/httpbeat.yml
 
 ENV HTTPBEAT_USER="" \
@@ -20,4 +19,4 @@ ENV HTTPBEAT_USER="" \
     ELASTICSEARCH_PORT="9200"
 
 ENTRYPOINT ["/run/entrypoint.sh"]
-CMD ["httpbeat", "-c /etc/httpbeat/httpbeat.yml"]
+CMD ["httpbeat", "-c /etc/httpbeat/httpbeat.yml", "-path.config /etc/httpbeat", "-e","-v"]

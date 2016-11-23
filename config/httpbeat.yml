@@ -90,9 +90,9 @@ output:
 # There are three options for the log ouput: syslog, file, stderr.
 # Under Windos systems, the log files are per default sent to the file output,
 # under all other system per default to syslog.
-logging:
+#logging:
 
-  to_syslog: false
+  #to_syslog: false
   #to_files: false
   #files:
     #path: /var/log/mybeat
