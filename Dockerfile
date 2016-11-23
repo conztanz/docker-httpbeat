@@ -20,4 +20,4 @@ ENV HTTPBEAT_USER="" \
     ELASTICSEARCH_PORT="9200"
 
 ENTRYPOINT ["/run/entrypoint.sh"]
-CMD ["httpbeat", "-c /etc/httpbeat/httpbeat.yml"]
+CMD ["httpbeat", "-c /etc/httpbeat/httpbeat.yml", "-e", "-v"]
