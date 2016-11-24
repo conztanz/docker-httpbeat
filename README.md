@@ -115,6 +115,12 @@ Elasticsearch hostname.
 ##### ELASTICSEARCH_PORT | `9200`
 Elasticsearch port.
 
+# Configure Httpbeat
+
+Configuration file is located in `/etc/httpbeat/httpbeat.yml` if you follow the same volume mapping as in docker-compose examples above.
+
+You can find help with httpbeat configuration [here](https://github.com/christiangalsterer/httpbeat/blob/master/docs/configuration.asciidoc).
+
 # User Feedback
 ## Issues
 If you have any problems with or questions about this image, please ask for help through a [GitHub issue](https://github.com/Khezen/docker-httpbeat/issues).
