@@ -21,7 +21,7 @@ Example use cases are:
 ## docker engine
 
 ```
-docker run -d -p 5601:5601 khezen/httpbeat:latest   
+docker run -d khezen/httpbeat:latest   
 ```
 
 ## docker-compose
