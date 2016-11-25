@@ -6,12 +6,13 @@ LABEL Description="elasticsearch x-pack beat httpbeat"
 COPY ./src/ /run/
 RUN chmod +x -R /run
 
+# config
+COPY config/httpbeat.yml /.backup/httpbeat/httpbeat.yml
+RUN  rm -f /etc/httpbeat/httpbeat.yml
+
 # bin
 RUN sh /run/setup/httpbeat.sh \
 &&  export PATH=$PATH:/usr/bin
-
-# config
-COPY config/httpbeat.yml /.backup/httpbeat/httpbeat.yml
 
 ENV HTTPBEAT_USER="" \
     HTTPBEAT_PWD="changeme" \

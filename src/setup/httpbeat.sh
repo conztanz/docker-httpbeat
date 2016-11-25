@@ -19,9 +19,11 @@ git clone https://github.com/christiangalsterer/httpbeat
 cd httpbeat
 make
 mv httpbeat /usr/bin/httpbeat
-mv etc /etc/httpbeat
-cp /etc/httpbeat/httpbeat.template.json /etc/httpbeat/httpbeat.template-es2x.json
-rm -f /etc/httpbeat/httpbeat.yml
+
+cp /.backup/httpbeat/httpbeat.yml ./etc/httpbeat.yml
+cp -a ./etc/. /.backup/httpbeat/
+cp /.backup/httpbeat/httpbeat.template.json /.backup/httpbeat/httpbeat.template-es2x.json
+
 
 #purge
 strip /usr/bin/httpbeat

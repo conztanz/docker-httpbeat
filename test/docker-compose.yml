@@ -3,3 +3,5 @@ services:
     httpbeat:
         build: ..
         network_mode: bridge
+        volumes:
+            - /etc/httpbeat:/etc/httpbeat
