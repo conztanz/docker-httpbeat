@@ -109,7 +109,7 @@ Elasticsearch user for this beat. If left empty: authentication is not defined i
 ##### HTTPBEAT_PWD | `changeme`
 password for elasticsearch user **HTTPBEAT_USER**.
 
-##### ELASTICSEARCH_HOST | `elasticseach`
+##### ELASTICSEARCH_HOST | `elasticsearch`
 Elasticsearch hostname.
 
 ##### ELASTICSEARCH_PORT | `9200`
