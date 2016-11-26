@@ -17,6 +17,7 @@ mkdir -p $GOPATH/src/github.com/christiangalsterer
 cd $GOPATH/src/github.com/christiangalsterer
 git clone https://github.com/christiangalsterer/httpbeat
 cd httpbeat
+git checkout tags/2.0.0
 make
 mv httpbeat /usr/bin/httpbeat
 
